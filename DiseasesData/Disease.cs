@@ -17,7 +17,7 @@ namespace DiseasesData
 
         public ICollection<string> StringNames
         {
-            get => Names.Select(n => n.Value).ToList();
+            get => Names?.Select(n => n.Value).ToList();
         }
 
         public Disease()
