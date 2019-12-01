@@ -36,6 +36,10 @@ namespace DiseasesData
                 .HasForeignKey("CausedById")
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Cause>()
+                .HasIndex(p => new { p.DiseaseId, p.CausedById })
+                .IsUnique();
+            
             base.OnModelCreating(modelBuilder);
         }
     }
