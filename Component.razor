@@ -1,0 +1,50 @@
+﻿@page "/mypage"
+@inject IJSRuntime JsRuntime
+
+<h3>Simptoms</h3>
+
+<form>
+    <input type="text" placeholder="Introduceti un simptom..." name="smp" onclick="this.value=''" onsubmit="AddSimptomToList" @bind="textul" />
+</form>
+<button class="btn btn-primary" @onclick="AddSimptomToList">Adauga</button>
+<button class="btn btn-primary" @onclick="SendList">Final</button>
+
+@if (Final == null)
+{
+    <p><em>...</em></p>
+}
+else
+{
+<tbody>
+    @foreach (var x in Final)
+    {
+        <tr>
+            <td>@x</td>
+        </tr>
+    }
+</tbody>
+}
+
+<h3>Diagnostic</h3>
+<h4>"Aici va fi afisat diagnosticul probabil"</h4>
+
+@code {
+    string textul;
+    List<string> simtomps = new List<string>();
+    List<string> Final = new List<string>();
+
+    void AddSimptomToList()
+    {
+        simtomps.Add(textul);
+        textul = string.Empty;
+    }
+
+
+    void SendList()
+    {
+        Final = simtomps.GetRange(0, simtomps.Count);
+        simtomps.Clear();
+        //return Final;
+
+    }
+}
