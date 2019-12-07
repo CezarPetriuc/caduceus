@@ -1,0 +1,3 @@
+client = https://prnt.sc/q7oxk5
+admin = https://prnt.sc/q7oxwo
+admin with some data = https://prnt.sc/q7oy4t
