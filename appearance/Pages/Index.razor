@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<div class="custom_body">
+    <div class="logo">
+        <img id="logo-image" src="/css/images/cadu.png" />
+    </div>
+    <div class="input_bar">
+        <div class="fake_input">
+            <form id="input_form" action="mypage/@simptom">
+                <input id="input_box" name="search_input" type="text" placeholder="dissease..." @bind="simptom" />
+                <a href="mypage/@simptom"><img id="search-icon" src="/css/images/search.svg" /></a>
+            </form>
+           
+        </div>
+    </div>
+</div>
+
+@code {
+    string simptom;
+}
