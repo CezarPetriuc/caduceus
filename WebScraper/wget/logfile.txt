@@ -1,0 +1,6 @@
+--2019-12-07 13:37:31--  http://diseasesdatabase.com/
+Resolving diseasesdatabase.com... 217.155.207.159
+Connecting to diseasesdatabase.com|217.155.207.159|:80... connected.
+HTTP request sent, awaiting response... 410 Gone
+2019-12-07 13:37:32 ERROR 410: Gone.
+
