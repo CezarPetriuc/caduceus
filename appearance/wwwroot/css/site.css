@@ -3,6 +3,7 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-image: linear-gradient(0deg, rgb(5, 39, 103) 0%, #0198b3 70%);
+    height:100%;
 }
 
 .input_bar {
@@ -44,7 +45,6 @@ html, body {
     border: none;
     background: transparent;
     outline: none;
-    width: calc(3 * 112px + 1px);
 }
 
 #search-icon {
@@ -296,16 +296,14 @@ app {
     }
 }
 
-
-.simptom_add_imput {
-    outline: none;
-    border: none;
-    border-bottom:solid;
-    padding: 0;
+.dissease_name {
+    color: papayawhip;
 }
 
-.simptom_add_div {
-    padding-top: 2rem;
-    display: flex;
-    justify-content: center;
+.dissease_remedy {
+    color: papayawhip;
+}
+
+.dissease_info {
+    color: papayawhip;
 }
