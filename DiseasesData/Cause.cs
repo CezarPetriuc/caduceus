@@ -18,6 +18,9 @@ namespace DiseasesData
         [Required]
         public Guid CausedById { get; private set; }
 
+        [Required]
+        public uint Count { get; set; }
+
         [ForeignKey("DiseaseId")]
         public virtual Disease Disease { get; private set; }
 
@@ -29,6 +32,7 @@ namespace DiseasesData
             this.Id = Guid.NewGuid();
             this.DiseaseId = diseaseId;
             this.CausedById = causedById;
+            this.Count = 1;
         }
        
         public Cause(Guid diseaseId, Disease causedBy)
