@@ -1,4 +1,5 @@
-﻿@page "/mypage"
+﻿@page "/"
+@page "/mypage"
 @page "/mypage/{simptom}"
 @inject IJSRuntime JsRuntime
 
@@ -9,14 +10,10 @@
     <div class="input_bar">
         <div class="fake_input">
             <form id="input_form" name="des" action="mypage/@textul">
-                <input id="input_box" name="search_input" type="text" placeholder="Introduceti o boala..." onsubmit="SendList()" @bind="disease" />
+                <input id="input_box" name="search_input" type="text" placeholder="Introduceti osimptoma" onsubmit="SendList" @bind="textul" />
                 <a href="mypage/@simptom"><img id="search-icon" src="/css/images/search.svg" /></a>
             </form>
         </div>
-    </div>
-
-    <div class="simptom_add_div">
-            <input class="simptom_add_imput" name="add_symptom" type="text" placeholder="Introduceti o simptoma" @bind="textul" />
     </div>
 
     <div class="admin_options">
@@ -35,13 +32,17 @@
 @if (testing) {
     <tbody class="test_data">
         @if (Final != null) {
-            <b>@disease</b>
-            <ul>
-                @foreach (var x in Final)
-                {
-                    <li>@x</li>
-                }
-            </ul>
+        <div class="diseases">
+            <p><b>Now we show only testing data, here will be placed search output with diseases</b> </p>
+            <p class="dissease_name">Disease name</p>
+            <p class="dissease_remedy">Dissease remedy</p>
+            <p class="dissease_info">Dissease additional info</p>
+            @foreach (var x in Final)
+            {
+                <li>@x</li>
+            }
+
+        </div>
         }
     </tbody>
 }
@@ -53,7 +54,8 @@
     public string simptom { get; set; }
 
     string textul;
-    string disease;
+    string disease = "disease name";
+
     List<string> simtomps = new List<string>();
     List<string> Final = new List<string>();
 
