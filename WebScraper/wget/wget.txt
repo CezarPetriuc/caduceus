@@ -1,3 +1,0 @@
-wget --random-wait -r -p -e robots=off -U Mozilla http://diseasesdatabase.com
-
-wget --random-wait --limit-rate=20k -o logfile.txt -e robots=off -U Mozilla http://diseasesdatabase.com
