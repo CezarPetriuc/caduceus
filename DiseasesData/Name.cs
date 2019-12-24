@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace DiseasesData
 {
@@ -13,7 +11,7 @@ namespace DiseasesData
         public Guid Id { get; private set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Value { get; private set; }
 
         [Required]
