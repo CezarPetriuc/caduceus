@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using DiseasesData; 
+using DiseasesData;
 
 namespace Population
 {
@@ -38,7 +38,7 @@ namespace Population
                 foreach (string line in File.ReadAllText(filePath).Split('\n'))
                 {
                     Disease disease = new Disease();
-                    Name name = new Name(disease, line);
+                    Name name = new Name(disease, line.Trim());
                     ctx.Diseases.Add(disease);
                     ctx.Names.Add(name);
                     Console.WriteLine($"Added {uline(disease.StringName)}");
@@ -53,7 +53,8 @@ namespace Population
                     for (int j = 0; j < rand.Next(1, 5); j += 1)
                     {
                         int di = -1;
-                        do {
+                        do
+                        {
                             di = rand.Next(diseases.Count);
                         } while (i == di);
 
