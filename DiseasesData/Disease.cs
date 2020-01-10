@@ -10,10 +10,10 @@ namespace DiseasesData
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         [Obsolete]
-        public virtual List<Name> Names { get; set; }
+        public virtual List<Name> Names { get; private set; }
 
         [Obsolete]
         public List<string> StringNames
