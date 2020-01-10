@@ -10,18 +10,21 @@ namespace DiseasesData
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
+        [Obsolete]
+        public virtual List<Name> Names { get; set; }
+
+        [Obsolete]
+        public List<string> StringNames
+        {
+            get => Names?.Select(n => n.Value).ToList();
+        }
+
+        [Obsolete]
         public string StringName
         {
             get => this.StringNames.First();
-        }
-        
-        public virtual ICollection<Name> Names { get; private set; }
-
-        public ICollection<string> StringNames
-        {
-            get => Names?.Select(n => n.Value.Trim()).ToList();
         }
 
         public Disease()
